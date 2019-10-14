@@ -1,0 +1,130 @@
+.input-label
+  display: block
+  position: relative
+
+  &__label
+    color: #000
+    font-size: 16px
+    font-weight: 400
+    line-height: 22px
+    left: 0
+    letter-spacing: 0
+    overflow: hidden
+    pointer-events: none
+    position: absolute
+    top: 50%
+    text-overflow: ellipsis
+    transform: translateY(-50%)
+    transition: all 0.3s
+    white-space: nowrap
+    width: 100%
+
+    @media(min-width: 768px)
+      color: rgba(#000, 0.45)
+
+  .input,
+  .textarea
+    &:focus,
+    &.focus
+      & + .input-label__label
+        color: rgba(#414141, 0.5)
+        font-size: 8px
+        letter-spacing: 2px
+        top: 10%
+        text-transform: uppercase
+
+  .textarea
+    &:focus,
+    &.focus
+      & + .input-label__label
+        color: rgba(#414141, 0.5)
+        font-size: 8px
+        letter-spacing: 2px
+        top: 6px
+        text-transform: uppercase
+
+  &.filled
+    .input,
+    .textarea
+      border-color: #223D72
+
+      & +.input-label__label
+        color: rgba(#414141, 0.5)
+        font-size: 8px
+        letter-spacing: 2px
+        top: 10%
+        text-transform: uppercase
+
+    .textarea
+      border-color: #223D72
+
+      & + .input-label__label
+
+.input,
+.textarea
+  background-color: #fff
+  border: none
+  border-bottom: 1px solid #EDEDEE
+  border-radius: 0
+  box-shadow: none !important
+  color: #000
+  font-size: 14px
+  font-weight: 300
+  line-height: 18px
+  transition: border-color 0.3s, background-color 0.3s
+  width: 100%
+
+  &:focus
+    border-color: #071D5B
+    background-color: #fff
+
+  &.error
+    border-color: #B12931 !important
+
+    &:focus
+      border-color: #B12931 !important
+
+  &:disabled
+    background-color: #EDEDED
+    border-color: #EDEDED
+
+    & + .input-label__label
+      opacity: 0.3
+
+.input
+  min-height: 56px
+  padding: 19px 0 19px
+
+  &--placeholder
+    padding-top: 19px
+    padding-bottom: 19px
+
+.textarea
+  height: 56px
+  padding: 16px 0 16px
+  resize: none
+
+/*placeholder*/
+.input::-webkit-input-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1
+
+.input::-moz-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1
+
+.input:-ms-input-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1
+
+.textarea::-webkit-input-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1
+
+.textarea::-moz-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1
+
+.textarea:-ms-input-placeholder
+  color: rgba(#000, 0.5)
+  opacity: 1

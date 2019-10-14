@@ -1,0 +1,94 @@
+.contacts
+  padding-top: 65px
+  padding-bottom: 90px
+
+  &__container
+    max-width: 1140px
+
+    @media(min-width: 992px)
+      display: flex
+
+  &__title
+    color: #071D5B
+    font-size: 32px
+    line-height: 38px
+    margin-bottom: 25px
+
+    @media(min-width: 768px)
+      font-size: 51px
+      line-height: 50px
+      margin-bottom: 15px
+
+  &__text
+    color: rgba(#000, 0.4)
+    display: none
+
+    @media(min-width: 768px)
+      display: block
+
+  &__left
+    margin-bottom: 25px
+
+    @media(min-width: 768px)
+      margin-bottom: 0
+
+  &__right
+    @media(min-width: 992px)
+      min-width: 265px
+
+  &__phone
+    color: #000
+    display: inline-block
+    font-size: 32px
+    line-height: 24px
+    margin-bottom: 15px
+    text-decoration: none
+
+  &__address
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: 10px
+
+  &__email
+    font-size: 15px
+    line-height: 24px
+    font-weight: 700
+
+.contacts-form
+
+  &__left
+    margin-bottom: 30px
+
+    @media(min-width: 768px)
+      margin-bottom: 0
+
+  &__right
+    margin-bottom: 15px
+
+    @media(min-width: 768px)
+      margin-bottom: 0
+
+  &__bottom
+    @media(min-width: 768px)
+      align-items: center
+      display: flex
+      flex-direction: row-reverse
+
+  .input-label
+    margin-bottom: 30px
+
+    &:last-child
+      margin-bottom: 0
+
+  .checkbox-label
+    margin-bottom: 30px
+
+    @media(min-width: 768px)
+      margin-bottom: 0
+      margin-left: 35px
+
+  &__button
+    width: 100%
+
+    @media(min-width: 768px)
+      max-width: 268px
