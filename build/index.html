@@ -18,6 +18,51 @@
 </head>
 
 <body>
+  <svg aria-hidden="true" style="width: 0px; height: 0px; overflow: hidden; position: absolute;" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="slider-up" viewBox="0 0 10 18">
+      <path d="M9 1L1 9.38095L9 17" />
+    </symbol>
+    <symbol id="slider-down" viewBox="0 0 10 18">
+      <path d="M1 1L9 9.38095L1 17" />
+    </symbol>
+    <symbol id="slider-left" viewBox="0 0 9 16">
+      <path d="M8 15L1 8L8 1" />
+    </symbol>
+    <symbol id="slider-right" viewBox="0 0 9 16">
+      <path d="M1 15L8 8L1 1" />
+    </symbol>
+    <symbol id="calc_1" viewBox="0 0 30 30">
+      <g>
+        <rect x="0.5" y="0.5" width="13" height="13" />
+        <rect x="16.5" y="0.5" width="13" height="13" />
+        <rect x="0.5" y="16.5" width="13" height="13" />
+        <rect x="16.5" y="16.5" width="13" height="13" />
+      </g>
+    </symbol>
+    <symbol id="calc_2" viewBox="0 0 48 50">
+      <g>
+        <rect x="0.5" y="0.5" width="19" height="19" />
+        <rect x="28.5" y="0.5" width="19" height="19" />
+        <rect x="0.5" y="30.5" width="19" height="19" />
+        <rect x="28.5" y="30.5" width="19" height="19" />
+      </g>
+    </symbol>
+    <symbol id="pres_1" viewBox="0 0 35 34">
+      <g>
+        <rect x="0.5" y="0.5" width="25" height="25" />
+        <rect x="4.5" y="4.5" width="25" height="25" />
+        <rect x="9.5" y="8.5" width="25" height="25" />
+      </g>
+    </symbol>
+    <symbol id="pres_2" viewBox="0 0 79 45">
+      <g>
+        <rect x="0.5" y="0.5" width="69" height="36" />
+        <rect x="4.5" y="4.5" width="69" height="36" />
+        <rect x="9.5" y="8.5" width="69" height="36" />
+      </g>
+    </symbol>
+  </svg>
+
   <header class="header">
       <div class="container">
           Шапка 1
@@ -78,11 +123,122 @@
     <div class="team__container container">
       <div class="team__heading">
         <h2 class="team__title">Наша команда</h2>
-        <a href="#">Узнайте о нас лучше</a>
+        <a class="button button--white" href="#">Узнайте о нас лучше</a>
       </div>
-      <div class="team__slider"></div>
+      <div class="team__slider">
+        <div class="js-team-slider team-slider">
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_1.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Виталька</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_2.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Милана</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_3.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Коленька</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_4.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Андрюшка</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_1.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Виталька</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_2.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Милана</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_3.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Коленька</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+          <div class="team-slider__slide">
+            <div class="team-person">
+              <div class="team-person__image-block">
+                <div class="team-person__image-block-inner">
+                  <img class="team-person__image" src="images/content/team/img_4.jpg" alt="">
+                </div>
+              </div>
+              <div class="team-person__info">
+                <p class="team-person__name">Андрюшка</p>
+                <p class="team-person__about">Погружаемся в ваш бизнес и изучаем его особенности. Разрабатываем стратегию развития вашей компании в digital на год.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="team-slider-nav">
+          <div class="team-slider-dots"></div>
+          <div class="team-slider-arrows"></div>
+        </div>
+      </div>
       <div class="team__button-block">
-        <a href="#">Узнайте о нас лучше</a>
+        <a class="button button--white" href="#">Узнайте о нас лучше</a>
       </div>
     </div>
   </div>
@@ -96,25 +252,29 @@
           <div class="case__info">
             <div class="case__heading">
               <h3 class="case__title">Каскад</h3>
-              <a class="case__link" href="#">goldunioin.ru</a>
+              <a class="case__link" href="#" target="_blank">goldunioin.ru</a>
             </div>
             <p class="case__about">Маркетинговая поддержка и разработка стратегии.</p>
             <p class="case__works">проектирование, дизайн, motion-дизайн, графический контент, frontend, backend, дизайн-поддержка, тех. поддержка</p>
           </div>
         </div>
         <div class="case">
-          <div class="case__image-block">
-            <div class="case-slider">
+          <div class="case__image-block case__image-block--slider">
+            <div class="js-case-slider case-slider">
               <div><img src="images/content/cases/img_2.jpg" alt=""></div>
               <div><img src="images/content/cases/img_2.jpg" alt=""></div>
               <div><img src="images/content/cases/img_2.jpg" alt=""></div>
               <div><img src="images/content/cases/img_2.jpg" alt=""></div>
             </div>
+            <div class="case-slider-nav">
+              <div class="case-slider-dots"></div>
+              <div class="case-slider-arrows"></div>
+            </div>
           </div>
           <div class="case__info">
             <div class="case__heading">
               <h3 class="case__title">Gold Union</h3>
-              <a class="case__link" href="#">goldunioin.ru</a>
+              <a class="case__link" href="#" target="_blank">goldunioin.ru</a>
             </div>
             <p class="case__about">Маркетинговая поддержка и разработка стратегии.</p>
             <p class="case__works">проектирование, дизайн, motion-дизайн, графический контент, frontend, backend, дизайн-поддержка, тех. поддержка</p>
@@ -125,7 +285,7 @@
           <div class="case__info">
             <div class="case__heading">
               <h3 class="case__title">Decorum</h3>
-              <a class="case__link" href="#">goldunioin.ru</a>
+              <a class="case__link" href="#" target="_blank">goldunioin.ru</a>
             </div>
             <p class="case__about">Маркетинговая поддержка и разработка стратегии.</p>
             <p class="case__works">проектирование, дизайн, motion-дизайн, графический контент, frontend, backend, дизайн-поддержка, тех. поддержка</p>
@@ -133,8 +293,28 @@
         </div>
       </div>
       <div class="cases__links">
-        <a href="#">Просчет стоимости</a>
-        <a href="#">Скачать презентацию</a>
+        <p class="cases__links-block">
+          <a class="cases__link" href="#">
+            <svg class="cases__link-icon cases__link-icon--calc cases__link-icon--mobile" aria-hidden="true">
+              <use xlink:href="#calc_1" />
+            </svg>
+            <svg class="cases__link-icon cases__link-icon--calc_2 cases__link-icon--desktop" aria-hidden="true">
+              <use xlink:href="#calc_2" />
+            </svg>
+            Просчет стоимости
+          </a>
+        </p>
+        <p class="cases__links-block">
+          <a class="cases__link" href="#">
+            <svg class="cases__link-icon cases__link-icon--pres cases__link-icon--mobile" aria-hidden="true">
+              <use xlink:href="#pres_1" />
+            </svg>
+            <svg class="cases__link-icon cases__link-icon--pres_2 cases__link-icon--desktop" aria-hidden="true">
+              <use xlink:href="#pres_2" />
+            </svg>
+            Скачать презентацию
+          </a>
+        </p>
       </div>
     </div>
   </div>
@@ -187,6 +367,7 @@
   </div>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
 

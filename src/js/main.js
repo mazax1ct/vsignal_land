@@ -10,46 +10,79 @@ $(document).ready(function () {
   //запуск функции навешивания класса с тенью на шапку
   resize_scroll();
 
-  //слайдер картинок
-  if ($('.js-main-slider').length) {
-    $('.js-main-slider').slick({
+  //слайдер "команда"
+  if ($('.js-team-slider').length) {
+    $('.js-team-slider').slick({
+      focusOnSelect: true,
+      centerMode: true,
+      variableWidth: true,
       auto: false,
       mobileFirst: true,
       slidesToShow: 1,
-      infinite: true,
+      infinite: false,
       arrows: false,
-      appendArrows: $('.main-slider-nav'),
-      prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#main-slider-prev"/></svg></button>',
-      nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#main-slider-next"/></svg></button>',
       dots: true,
       responsive: [
         {
-          breakpoint: 1349,
+          breakpoint: 1200,
           settings: {
-            arrows: true
+            focusOnSelect: true,
+            edgeFriction: 0,
+            centerMode: false,
+            variableWidth: false,
+            slidesToShow: 4,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
+            appendArrows: $('.team-slider-arrows'),
+            appendDots: $('.team-slider-dots')
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            focusOnSelect: true,
+            edgeFriction: 0,
+            centerMode: false,
+            variableWidth: false,
+            slidesToShow: 3,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
+            appendArrows: $('.team-slider-arrows'),
+            appendDots: $('.team-slider-dots')
           }
         }
       ]
     });
   }
 
-  //слайдер картинок
-  if ($('.js-slider').length) {
-    $('.js-slider').slick({
+  $('.team-slider__slide').click(function () {
+    if($('body').width() > 767){
+      $('.team-slider__slide').removeClass('slick-current');
+      $(this).addClass('slick-current');
+      return false;
+    }
+  });
+
+  //слайдер картинок в кейсах
+  if ($('.js-case-slider').length) {
+    $('.js-case-slider').slick({
       auto: false,
       mobileFirst: true,
       slidesToShow: 1,
       infinite: true,
       arrows: false,
-      prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-arrow-left"/></svg></button>',
-      nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-arrow-right"/></svg></button>',
       dots: true,
       responsive: [
         {
-          breakpoint: 849,
+          breakpoint: 767,
           settings: {
-            dots: false,
-            arrows: true
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
+            appendArrows: $('.case-slider-arrows'),
+            appendDots: $('.case-slider-dots')
           }
         }
       ]
