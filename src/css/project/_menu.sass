@@ -1,0 +1,170 @@
+.menu
+  background-color: rgba(#000, 0.5)
+  display: none
+  height: 100vh
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 101
+
+  &.is-open
+    display: block
+
+  &__inner
+    background-color: #071D5B
+    height: 100%
+    max-width: 600px
+    overflow-y: auto
+    position: relative
+    padding-top: 70px
+    padding-left: 30px
+    padding-right: 30px
+
+    @media(min-width: 375px)
+      padding-left: 48px
+      padding-right: 48px
+
+    @media(min-width: 1200px)
+      padding-top: 150px
+
+    .socials
+      margin-bottom: 95px
+
+.menu-list
+  font-size: 24px
+  font-weight: 500
+  line-height: 42px
+  list-style: none
+  margin-bottom: 35px
+  padding-top: 0
+  padding: 0
+
+  @media(min-width: 1200px)
+    font-size: 32px
+    line-height: 54px
+
+  &__item
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+  &__link
+    color: #fff
+    text-decoration: none
+
+    &:hover,
+    &:focus
+      text-decoration: underline
+
+.menu-links
+  margin-bottom: 45px
+
+.menu-link
+  align-items: center
+  color: #96AAE3
+  display: inline-flex
+  font-size: 18px
+  font-weight: 500
+  line-height: 25px
+  vertical-align: middle
+  text-decoration: none
+
+  @media(min-width: 992px)
+    font-size: 24px
+    min-height: 50px
+
+  &:hover,
+  &:focus
+    text-decoration: underline
+
+  &__icon
+    &--calc
+      fill: none
+      height: 30px
+      margin-right: 20px
+      stroke: #203675
+      width: 30px
+
+    &--pres
+      fill: none
+      height: 34px
+      margin-right: 16px
+      stroke: #203675
+      width: 35px
+
+.menu-contacts
+  margin-bottom: 25px
+
+  @media(min-width: 1200px)
+    display: none
+
+  &__phone
+    color: #fff
+    display: inline-block
+    font-size: 32px
+    line-height: 24px
+    margin-bottom: 25px
+    text-decoration: none
+
+    @media(min-width: 992px)
+      margin-bottom: 30px
+
+  &__address
+    color: #fff
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: 15px
+
+  &__email
+    color: #fff
+    font-size: 15px
+    line-height: 24px
+    font-weight: 700
+    text-decoration: none
+
+.menu-opener
+  align-items: center
+  background: none
+  border: none
+  cursor: pointer
+  display: flex
+  justify-content: center
+  height: 23px
+  margin-left: 20px
+  padding: 0
+  width: 37px
+
+  @media(min-width: 1200px)
+    margin-right: 45px
+    order: -1
+
+  &__icon
+    fill: #fff
+    height: 23px
+    width: 37px
+
+.menu-closer
+  align-items: center
+  background: none
+  border: none
+  cursor: pointer
+  display: flex
+  justify-content: center
+  height: 30px
+  left: auto
+  position: absolute
+  padding: 0
+  right: 15px
+  top: 24px
+  width: 30px
+
+  @media(min-width: 1200px)
+    top: 64px
+    right: 40px
+
+  &__icon
+    fill: #fff
+    height: 27px
+    width: 27px

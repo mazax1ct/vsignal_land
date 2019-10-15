@@ -22,8 +22,14 @@
 
   //= template/header.html
 
-  <div class="slider">
-
+  <div class="js-slider slider">
+    <div class="slider__slide">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/content/slider/small/img_1.jpg">
+        <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
+        <img src="images/content/slider/big/img_1.jpg">
+      </picture>
+    </div>
   </div>
 
   <div class="about">

@@ -1,9 +1,10 @@
 //функция навешивания класса с тенью на шапку
 var resize_scroll = function(e) {
-  var h = $(".header");
-  $(window).scrollTop() > h.height()
-    ? h.addClass("scrolled")
-    : h.removeClass("scrolled");
+  var offset = $(".slider");
+  var header = $(".header");
+  $(window).scrollTop() > offset.height()
+    ? header.addClass("fixed")
+    : header.removeClass("fixed");
 };
 
 $(document).ready(function () {
@@ -57,6 +58,7 @@ $(document).ready(function () {
     });
   }
 
+  //переключение активного слайда "команда"
   $('.team-slider__slide').click(function () {
     if($('body').width() > 767){
       $('.team-slider__slide').removeClass('slick-current');
@@ -107,10 +109,15 @@ $(document).ready(function () {
 
   //открваем мобильное меню
   $('.js-menu-open').click(function () {
-    $(this).toggleClass('is-active');
-    $('.header').toggleClass('header--menu_open');
     $('body').toggleClass('overflow');
-    $('.menu-block').toggleClass('is-open');
+    $('.menu').toggleClass('is-open');
+    return false;
+  });
+
+  //закрываем мобильное меню
+  $('.js-menu-close').click(function () {
+    $('body').toggleClass('overflow');
+    $('.menu').toggleClass('is-open');
     return false;
   });
 

@@ -14,19 +14,8 @@ body
   min-width: 320px
   overflow-wrap: break-word
 
-.wrapper
-  @media (min-width: 768px)
-    min-height: 100%
-    height: auto !important
-    height: 100%
-    margin-bottom: -100px
-
-  &::after
-    @media (min-width: 768px)
-      content: ""
-      display: block
-      height: 100px
-      width: 100%
+  &.overflow
+    overflow: hidden
 
 .container
   margin-left: auto

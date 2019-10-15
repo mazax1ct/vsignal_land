@@ -15,7 +15,7 @@
     padding-bottom: 60px
 
   &__container
-    max-width: 1300px
+    max-width: 1330px
 
   &__title
     color: #fff
@@ -30,7 +30,7 @@
     @media(min-width: 1200px)
       font-size: 51px
       line-height: 50px
-      max-width: 1080px
+      max-width: 1070px
       margin-left: auto
       margin-right: auto
       margin-bottom: 75px
@@ -46,14 +46,15 @@
       padding-top: 60px
 
     &::after
-      background-color: rgba(#395195, 0.23)
-      content: ''
-      height: 60px
-      left: 50%
-      position: absolute
-      top: 70%
-      transform: translateY(-50%)
-      width: 1px
+      @media(min-width: 768px)
+        background-color: rgba(#395195, 0.23)
+        content: ''
+        height: 60px
+        left: 50%
+        position: absolute
+        top: 70%
+        transform: translateY(-50%)
+        width: 1px
 
       @media(min-width: 1200px)
         height: 120px
@@ -78,6 +79,10 @@
     @media(min-width: 992px)
       font-size: 24px
       min-height: 50px
+
+    &:hover,
+    &:focus
+      text-decoration: underline
 
   &__link-icon
     &--mobile

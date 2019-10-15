@@ -1,5 +1,68 @@
 <header class="header">
-    <div class="container">
-        Шапка 1
+  <div class="header__container container">
+    <a class="logo" href="#">
+      <img class="logo__image logo__image--white" src="images/logo--white.svg" alt="VSignal">
+      <img class="logo__image logo__image--blue" src="images/logo--blue.svg" alt="VSignal">
+    </a>
+    <a class="header__phone-button" href="tel:+78125018207" title="Позвоните нам">
+      <svg class="header__phone-button-icon" aria-hidden="true">
+        <use xlink:href="#phone" />
+      </svg>
+      <span class="header__phone-button-text">8 (812) 501-82-07</span>
+    </a>
+    <button class="js-menu-open menu-opener" type="button" title="Открыть меню">
+      <svg class="menu-opener__icon" aria-hidden="true">
+        <use xlink:href="#burger" />
+      </svg>
+    </button>
+    <div class="header__socials socials">
+      <a class="social-link" href="#" target="_blank">In</a>
+      <a class="social-link" href="#" target="_blank">Vk</a>
+      <a class="social-link" href="#" target="_blank">Fb</a>
     </div>
+    <a class="header__presentation button" href="#">Cкачать презентацию</a>
+  </div>
 </header>
+<div class="menu">
+  <div class="menu__inner">
+    <button class="js-menu-close menu-closer" type="button" title="Закрыть меню">
+      <svg class="menu-closer__icon" aria-hidden="true">
+        <use xlink:href="#close" />
+      </svg>
+    </button>
+    <ul class="menu-list">
+      <li class="menu-list__item"><a class="menu-list__link" href="#">Услуги</a></li>
+      <li class="menu-list__item"><a class="menu-list__link" href="#">Команда</a></li>
+      <li class="menu-list__item"><a class="menu-list__link" href="#">Кейсы</a></li>
+      <li class="menu-list__item"><a class="menu-list__link" href="#">Связаться</a></li>
+    </ul>
+    <div class="menu-links">
+      <p>
+        <a class="menu-link" href="#">
+          <svg class="menu-link__icon menu-link__icon--calc" aria-hidden="true">
+            <use xlink:href="#calc_1" />
+          </svg>
+          Просчет стоимости
+        </a>
+      </p>
+      <p>
+        <a class="menu-link" href="#">
+          <svg class="menu-link__icon menu-link__icon--pres" aria-hidden="true">
+            <use xlink:href="#pres_1" />
+          </svg>
+          Скачать презентацию
+        </a>
+      </p>
+    </div>
+    <div class="menu-contacts">
+      <a class="menu-contacts__phone" href="tel:+78125018207">8 (812) 501-82-07</a>
+      <p class="menu-contacts__address">г. Москва, ул. Мясницкая 56</p>
+      <p><a class="menu-contacts__email" href="mailto:mail@vsignal.ru">mail@vsignal.ru</a></p>
+    </div>
+    <div class="socials">
+      <a class="social-link" href="#" target="_blank">In</a>
+      <a class="social-link" href="#" target="_blank">Vk</a>
+      <a class="social-link" href="#" target="_blank">Fb</a>
+    </div>
+  </div>
+</div>

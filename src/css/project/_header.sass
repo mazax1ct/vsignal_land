@@ -1,4 +1,119 @@
 .header
-  background-color: #ccc
-  padding-top: 30px
-  padding-bottom: 30px
+  background-color: transparent
+  height: 70px
+  left: 0
+  position: absolute
+  top: 70px
+  transform: translateY(-100%)
+  width: 100%
+  transition: transform 0.3s
+  z-index: 100
+
+  @media(min-width: 1200px)
+    height: 80px
+    top: 130px
+
+  &.fixed
+    background-color: #fff
+    box-shadow: 0 2px 40px 1px rgba(0,0,0,0.1)
+    position: fixed
+    transform: translateY(0)
+    top: 0
+
+    .logo__image--blue
+      display: block
+
+    .logo__image--white
+      display: none
+
+    .header__phone-button
+      @media(min-width: 1200px)
+        display: flex
+        width: auto
+
+    .header__phone-button-icon
+      stroke: #071D5B
+
+    .header__phone-button-text
+      @media(min-width: 1200px)
+        display: block
+
+    .menu-opener__icon
+      fill: #071D5B
+
+    .header__socials.socials
+      display: none
+
+    .header__presentation.button
+      @media(min-width: 1200px)
+        display: inline-flex
+
+  &__container
+    align-items: center
+    display: flex
+    max-width: 1330px
+    padding-top: 18px
+
+    @media(min-width: 1200px)
+      padding-top: 12px
+
+  &__phone-button
+    align-items: center
+    display: flex
+    justify-content: center
+    height: 30px
+    margin-left: auto
+    text-decoration: none
+    width: 30px
+
+    @media(min-width: 1200px)
+      display: none
+
+    &:hover,
+    &:focus
+      .header__phone-button-text
+        text-decoration: underline
+
+  &__phone-button-icon
+    fill: none
+    height: 28px
+    stroke: #fff
+    width: 18px
+
+    @media(min-width: 1200px)
+      display: none
+
+  &__phone-button-text
+    color: #000
+    display: none
+    font-size: 24px
+
+  &__socials
+    &.socials
+      display: none
+
+      @media(min-width: 1200px)
+        display: flex
+        margin-right: 65px
+
+  &__presentation
+    min-width: 268px
+    margin-left: 60px
+
+    &.button
+      display: none
+
+      @media(min-width: 1200px)
+        display: inline-flex
+
+.logo
+  display: block
+  width: 108px
+
+  @media(min-width: 1200px)
+    margin-right: auto
+    width: 138px
+
+  &__image
+    &--blue
+      display: none
