@@ -82,7 +82,8 @@
 
     &:hover,
     &:focus
-      text-decoration: underline
+      .cases__link-text
+        border-bottom-color: currentColor
 
   &__link-icon
     &--mobile
@@ -110,18 +111,24 @@
       width: 48px
 
     &--pres
-      fill: none
+      fill: #071D5B
       height: 34px
       margin-right: 16px
       stroke: #203675
       width: 35px
 
     &--pres_2
-      fill: none
+      fill: #071D5B
       height: 45px
       margin-right: 30px
       stroke: #fff
       width: 79px
+
+  &__link-text
+    border-bottom: 1px dotted transparent
+    padding-top: 3px
+    padding-bottom: 2px
+    transition: border-color 0.3s
 
 .case
   border-bottom: 1px solid rgba(#395195, 0.23)

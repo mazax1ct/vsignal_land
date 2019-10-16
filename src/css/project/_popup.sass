@@ -1,0 +1,79 @@
+.popup-shade
+  background-color: rgba(#000, 0.5)
+  display: none
+  height: 100%
+  left: 0
+  overflow-y: auto
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 101
+
+.popup
+  background-color: #fff
+  left: 50%
+  max-width: 600px
+  padding: 50px 15px
+  position: absolute
+  top: 0
+  transform: translateX(-50%)
+  width: 100%
+
+  @media(min-height: 600px)
+    top: 50%
+    transform: translate(-50%, -50%)
+
+  @media(min-width: 600px)
+    padding-left: 48px
+    padding-right: 48px
+
+  &__close
+    align-items: center
+    background: none
+    border: none
+    cursor: pointer
+    display: flex
+    justify-content: center
+    height: 30px
+    left: auto
+    position: absolute
+    padding: 0
+    right: 15px
+    top: 15px
+    width: 30px
+
+  &__close-icon
+    fill: #071D5B
+    height: 27px
+    width: 27px
+
+  &__title
+    color: #071D5B
+    font-size: 32px
+    font-weight: 700
+    line-height: 38px
+    margin-bottom: 25px
+
+    @media(min-width: 992px)
+      font-size: 40px
+      line-height: 44px
+
+    @media(min-width: 1200px)
+      font-size: 51px
+      line-height: 50px
+
+  &__text
+    color: rgba(0,0,0, 0.4)
+    margin-bottom: 30px
+
+  &__row
+    margin-bottom: 30px
+
+    &:last-child
+      margin-bottom: 0
+
+  .button
+    min-width: 50%
+    
+    @media(max-width: 599px)
+      width: 100%

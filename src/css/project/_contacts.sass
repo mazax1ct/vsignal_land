@@ -55,15 +55,25 @@
         margin-bottom: 10px
 
   &__phone
-    color: #000
-    display: inline-block
-    font-size: 32px
-    line-height: 24px
     margin-bottom: 15px
-    text-decoration: none
 
     @media(min-width: 992px)
       margin-bottom: 30px
+
+  &__phone-link
+    border-bottom: 1px dotted transparent
+    color: #000
+    display: inline-block
+    font-size: 32px
+    line-height: 30px
+    padding-top: 4px
+    padding-bottom: 3px
+    transition: border-color 0.3s
+    text-decoration: none
+
+    &:hover,
+    &:focus
+      border-bottom-color: currentColor
 
   &__address
     font-size: 16px

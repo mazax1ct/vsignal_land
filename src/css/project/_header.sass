@@ -72,7 +72,7 @@
     &:hover,
     &:focus
       .header__phone-button-text
-        text-decoration: underline
+        border-bottom-color: currentColor
 
   &__phone-button-icon
     fill: none
@@ -84,9 +84,13 @@
       display: none
 
   &__phone-button-text
+    border-bottom: 1px dotted transparent
     color: #000
     display: none
     font-size: 24px
+    padding-bottom: 3px
+    padding-top: 4px
+    transition: border-color 0.3s
 
   &__socials
     &.socials

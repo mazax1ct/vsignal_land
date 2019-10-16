@@ -116,18 +116,18 @@
         </svg>
       </button>
       <ul class="menu-list">
-        <li class="menu-list__item"><a class="menu-list__link" href="#">Услуги</a></li>
-        <li class="menu-list__item"><a class="menu-list__link" href="#">Команда</a></li>
-        <li class="menu-list__item"><a class="menu-list__link" href="#">Кейсы</a></li>
-        <li class="menu-list__item"><a class="menu-list__link" href="#">Связаться</a></li>
+        <li class="menu-list__item"><a class="menu-list__link" href="#services">Услуги</a></li>
+        <li class="menu-list__item"><a class="menu-list__link" href="#team">Команда</a></li>
+        <li class="menu-list__item"><a class="menu-list__link" href="#cases">Кейсы</a></li>
+        <li class="menu-list__item"><a class="menu-list__link" href="#contacts">Связаться</a></li>
       </ul>
       <div class="menu-links">
         <p>
-          <a class="menu-link" href="#">
+          <a class="js-popup menu-link" href="#">
             <svg class="menu-link__icon menu-link__icon--calc" aria-hidden="true">
               <use xlink:href="#calc_1" />
             </svg>
-            Просчет стоимости
+            <span class="menu-link__text">Просчет стоимости</span>
           </a>
         </p>
         <p>
@@ -135,7 +135,7 @@
             <svg class="menu-link__icon menu-link__icon--pres" aria-hidden="true">
               <use xlink:href="#pres_1" />
             </svg>
-            Скачать презентацию
+            <span class="menu-link__text">Скачать презентацию</span>
           </a>
         </p>
       </div>
@@ -159,10 +159,27 @@
         <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
         <img src="images/content/slider/big/img_1.jpg">
       </picture>
+      <div class="slider__slide-container">
+        <p class="slider__slide-pretitle">Решаем бизнес-задачи в Digital</p>
+        <p class="slider__slide-title">X-Сlinic. Маркетинговая поддержка и разработка стратегии</p>
+        <p class="slider__slide-text">Уникальная клиника Адаптационной медицины применяет интегративный подход и сочетает традиционные методы с современными достижениями в нейрофизиологии.</p>
+      </div>
+    </div>
+    <div class="slider__slide">
+      <picture>
+        <source media="(max-width: 767px)" srcset="images/content/slider/small/img_1.jpg">
+        <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
+        <img src="images/content/slider/big/img_1.jpg">
+      </picture>
+      <div class="slider__slide-container">
+        <p class="slider__slide-pretitle">Подзаголовок другого слайда</p>
+        <p class="slider__slide-title">Длинный заголовок о другом нашем проекте. И ещё немного текста</p>
+        <p class="slider__slide-text">Кратенькое описание проекта с используемыми нами кейсами. И вообще мы крутые парни</p>
+      </div>
     </div>
   </div>
 
-  <div class="about">
+  <div id="services" class="about">
     <div class="about__container container">
       <p class="about__intro">Решаем бизнес-задачи в Digital</p>
       <h1 class="about__title">Мы консалтинговое агентство:</h1>
@@ -208,7 +225,7 @@
     </div>
   </div>
 
-  <div class="team">
+  <div id="team" class="team">
     <div class="team__container container">
       <div class="team__heading">
         <h2 class="team__title">Наша команда</h2>
@@ -332,7 +349,7 @@
     </div>
   </div>
 
-  <div class="cases">
+  <div id="cases" class="cases">
     <div class="cases__container container">
       <h2 class="cases__title">Наши кейсы</h2>
       <div class="cases-list">
@@ -383,14 +400,14 @@
       </div>
       <div class="cases__links">
         <p class="cases__links-block">
-          <a class="cases__link" href="#">
+          <a class="js-popup cases__link" href="#">
             <svg class="cases__link-icon cases__link-icon--calc cases__link-icon--mobile" aria-hidden="true">
               <use xlink:href="#calc_1" />
             </svg>
             <svg class="cases__link-icon cases__link-icon--calc_2 cases__link-icon--desktop" aria-hidden="true">
               <use xlink:href="#calc_2" />
             </svg>
-            Просчет стоимости
+            <span class="cases__link-text">Просчет стоимости</span>
           </a>
         </p>
         <p class="cases__links-block">
@@ -401,14 +418,14 @@
             <svg class="cases__link-icon cases__link-icon--pres_2 cases__link-icon--desktop" aria-hidden="true">
               <use xlink:href="#pres_2" />
             </svg>
-            Скачать презентацию
+            <span class="cases__link-text">Скачать презентацию</span>
           </a>
         </p>
       </div>
     </div>
   </div>
 
-  <div class="contacts">
+  <div id="contacts" class="contacts">
     <div class="contacts__container container">
       <div class="contacts__left">
         <h2 class="contacts__title">Связаться с нами</h2>
@@ -443,7 +460,7 @@
         </form>
       </div>
       <div class="contacts__right">
-        <a class="contacts__phone" href="tel:+78125018207">8 (812) 501-82-07</a>
+        <p class="contacts__phone"><a class="contacts__phone-link" href="tel:+78125018207">8 (812) 501-82-07</a></p>
         <p class="contacts__address">г. Москва, ул. Мясницкая 56</p>
         <p><a class="contacts__email" href="mailto:mail@vsignal.ru">mail@vsignal.ru</a></p>
         <div class="socials">
@@ -452,6 +469,35 @@
           <a class="social-link social-link--dark" href="#" target="_blank">Fb</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="popup-shade">
+    <div class="popup">
+      <button class="js-popup-close popup__close" type="button" title="Закрыть">
+        <svg class="popup__close-icon" aria-hidden="true">
+          <use xlink:href="#close" />
+        </svg>
+      </button>
+      <p class="popup__title">Заявка на расчет</p>
+      <p class="popup__text">Оставьте ваши контактные данные и наш менеджер свяжется с вами для уточнения деталей и составления лучшего для вас предложения</p>
+      <form method="get" action="/">
+        <div class="popup__row">
+          <label class="input-label">
+            <input class="js-input input" type="text" name="name_" value="" />
+            <span class="input-label__label">Ваше имя</span>
+          </label>
+        </div>
+        <div class="popup__row">
+          <label class="input-label">
+            <input class="js-input input" type="text" name="phone_" value="" />
+            <span class="input-label__label">Ваш телефон</span>
+          </label>
+        </div>
+        <div class="popup__row">
+          <button class="button" type="submit">Отправить</button>
+        </div>
+      </form>
     </div>
   </div>
 

@@ -11,6 +11,50 @@ $(document).ready(function () {
   //запуск функции навешивания класса с тенью на шапку
   resize_scroll();
 
+  //главный баннер
+  if ($('.js-slider').length) {
+    $('.js-slider').slick({
+      auto: false,
+      mobileFirst: true,
+      slidesToShow: 1,
+      infinite: true,
+      arrows: false,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            focusOnSelect: true,
+            edgeFriction: 0,
+            centerMode: false,
+            variableWidth: false,
+            slidesToShow: 4,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
+            appendArrows: $('.team-slider-arrows'),
+            appendDots: $('.team-slider-dots')
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            focusOnSelect: true,
+            edgeFriction: 0,
+            centerMode: false,
+            variableWidth: false,
+            slidesToShow: 3,
+            arrows: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
+            appendArrows: $('.team-slider-arrows'),
+            appendDots: $('.team-slider-dots')
+          }
+        }
+      ]
+    });
+  }
+
   //слайдер "команда"
   if ($('.js-team-slider').length) {
     $('.js-team-slider').slick({
@@ -110,21 +154,68 @@ $(document).ready(function () {
   //открваем мобильное меню
   $('.js-menu-open').click(function () {
     $('body').toggleClass('overflow');
-    $('.menu').toggleClass('is-open');
+    $('.menu').fadeIn('300', function () {
+      $('.menu__inner').animate({
+          left: "0"
+        }, 400
+      );
+    });
     return false;
   });
 
   //закрываем мобильное меню
   $('.js-menu-close').click(function () {
-    $('body').toggleClass('overflow');
-    $('.menu').toggleClass('is-open');
+    $('.menu__inner').animate({
+        left: "-100%"
+      }, 400, function() {
+        $('.menu').fadeOut('300', function () {
+          $('body').toggleClass('overflow');
+        });
+    });
     return false;
   });
 
-  //попап
-  $('[data-fancybox]').fancybox({
-    smallBtn: false,
-    toolbar: false
+  //навигация по ссылкам меню
+  $(".menu-list").on("click", "a", function (event) {
+		event.preventDefault();
+		var id  = $(this).attr('href'),
+		top = $(id).offset().top;
+
+    $('.menu__inner').animate({
+        left: "-100%"
+      }, 400, function() {
+        $('.menu').fadeOut('300', function () {
+          $('body').toggleClass('overflow');
+          $('body,html').animate({
+            scrollTop: top
+          }, 500, 'linear');
+        });
+    });
+	});
+
+  //скролл наверх по клику на лого
+  $('.logo').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 500, 'linear');
+    return false;
+  });
+
+  //открываем попап
+  $('.js-popup').click(function () {
+    $('body').addClass('overflow');
+    $('.popup-shade').fadeIn();
+    return false;
+  });
+
+  //закрываем попап
+  $('.js-popup-close').click(function () {
+    $('.popup-shade').fadeOut('300', function () {
+      if(!$('.menu').is(':visible')){
+        $('body').removeClass('overflow');
+      }
+    });
+    return false;
   });
 });
 
