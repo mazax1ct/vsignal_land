@@ -1,7 +1,99 @@
+html.fp-scroll-free
+  .slider-menu
+    position: absolute
+    top: auto
+    bottom: 0
+    transform: translate(-50%, 0%)
+
+.slider-block
+  overflow: hidden
+  position: relative
+
+.slider-menu
+  display: none
+  flex-direction: column
+  justify-content: center
+  height: 100vh
+  left: 50%
+  list-style: none
+  margin: 0
+  padding: 0
+  position: fixed
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 101
+
+  @media(min-width: 1200px)
+    display: flex
+
+  &__item
+    align-items: center
+    display: flex
+    justify-content: center
+    height: 30px
+    margin-bottom: 0
+    width: 30px
+
+    &.active
+      .slider-menu__link
+        &::after
+          background-color: #fff
+          height: 8px
+          width: 8px
+
+  &__link
+    align-items: center
+    display: flex
+    justify-content: center
+    height: 30px
+    position: relative
+    width: 30px
+
+    &::after
+      background-color: rgba(#fff, 0.34)
+      border-radius: 50%
+      content: ''
+      display: block
+      height: 5px
+      transition: all 0.3s
+      width: 5px
+
+    &--arrow
+      &::after
+        display: none
+
+  &__link-text
+    position: absolute
+    margin: -1px 0 0 -1px
+    padding: 0
+    display: block
+    width: 1px
+    height: 1px
+    font-size: 1px
+    line-height: 1px
+    overflow: hidden
+    clip: rect(0,0,0,0)
+    border: 0
+    outline: 0
+
+  &__link-icon
+    fill: none
+    height: 15px
+    stroke: #C4C4C4
+    width: 30px
+
 .slider
+  @media(min-width: 1200px)
+    min-height: 100vh
+    z-index: 1
+
   &__slide
+    background-size: cover
     color: #fff
     position: relative
+
+    @media(max-width: 1199px)
+      background: none !important
 
   &__slide-container
     display: flex
@@ -24,14 +116,25 @@
     @media(min-width: 768px)
       width: 50%
 
+    @media(min-width: 1200px)
+      padding-left: 110px
+
+  &__slide-image
+    width: 100%
+
+    @media(min-width: 768px)
+      height: 100%
+      object-fit: cover
+
   &__slide-pretitle
     font-size: 8px
     font-weight: 300
     letter-spacing: 2px
     margin-bottom: 15px
-    text-transform: uppercase      
+    max-width: 450px
+    text-transform: uppercase
 
-    @media(min-width: 1200px)
+    @media(min-width: 1200px) and (min-height: 800px)
       font-size: 10px
       margin-bottom: 40px
 
@@ -40,13 +143,14 @@
     font-weight: 700
     line-height: 32px
     margin-bottom: 0
+    max-width: 450px
     text-transform: uppercase
 
     @media(min-width: 768px)
       font-size: 36px
-      line-height: 44px
+      line-height: 50px
 
-    @media(min-width: 1200px)
+    @media(min-width: 1350px)
       font-size: 48px
       line-height: 57px
 
@@ -54,8 +158,42 @@
     display: none
     font-size: 16px
     line-height: 24px
-    margin-top: 40px
+    margin-top: 20px
+    max-width: 370px
     opacity: 0.45
 
-    @media(min-width: 1200px)
+    @media(min-width: 1200px) and(min-height: 700px)
       display: block
+
+    @media(min-width: 1200px) and(min-height: 800px)
+      margin-top: 40px
+
+  .slick-dots
+    bottom: 25px
+
+    li
+      height: 30px
+      margin: 0
+      width: 30px
+
+      &.slick-active
+        button
+          &::before
+            background-color: #fff
+            height: 8px
+            width: 8px
+
+      button
+        height: 30px
+        position: relative
+        width: 30px
+
+        &::before
+          background-color: rgba(#C4C4C4, 0.34)
+          border-radius: 50%
+          height: 5px
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          transition: all 0.3s
+          width: 5px
