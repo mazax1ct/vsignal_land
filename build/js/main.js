@@ -6,11 +6,9 @@ var resize_scroll = function(e) {
     ? header.addClass("fixed")
     : header.removeClass("fixed");
 
-
   $(window).scrollTop() > offset.height() - header.height()*2
     ? header.addClass("fixed2")
     : header.removeClass("fixed2");
-
 };
 
 var apiFullPage;
