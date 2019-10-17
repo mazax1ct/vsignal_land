@@ -1,5 +1,7 @@
+var currentSlideSlick;
 //функция навешивания класса с тенью на шапку
 var resize_scroll = function(e) {
+
   var offset = $(".slider");
   var header = $(".header");
   $(window).scrollTop() > offset.height()
@@ -9,9 +11,24 @@ var resize_scroll = function(e) {
   $(window).scrollTop() > offset.height() - header.height()*2
     ? header.addClass("fixed2")
     : header.removeClass("fixed2");
+
+  if($(window).scrollTop() == 0 && $('body').width() >= 1199)  {
+    $('body').addClass('overflow');
+    if (currentSlideSlick != undefined) {
+      currentSlideSlick.slick('setPosition');
+    }
+
+    $('.js-slider').bind('mousewheel DOMMouseScroll', slider_scroll);
+  }
 };
 
-var apiFullPage;
+var slider_scroll = function (event) {
+  if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
+    $('.js-slider').slick('slickPrev');
+  } else {
+    $('.js-slider').slick('slickNext');
+  }
+}
 
 $(document).ready(function () {
   //запуск функции навешивания класса с тенью на шапку
@@ -29,61 +46,44 @@ $(document).ready(function () {
         dots: true
       });
     } else {
-      var indexForNormalScroll = 2;
 
-      var apiFullPage = new fullpage('#fullpage', {
-        menu: "#slider_menu",
-        lockAnchors: true,
-        scrollBar: true,
-        fitToSection: false,
+      if($(window).scrollTop() == 0) {
+        $('body').addClass('overflow');
+      }
 
-
-        afterLoad: function(origin, destination, direction) {
-          if (destination.index === indexForNormalScroll) {
-            $('html').toggleClass('fp-scroll-free');
-            fullpage_api.setAutoScrolling(false);
-          }
-        },
+    currentSlideSlick = $('.js-slider').slick({
+        fade: true,
+        auto: false,
+        mobileFirst: true,
+        slidesToShow: 1,
+        infinite: false,
+        arrows: true,
+        dots: true,
+        prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-up"/></svg></button>',
+        nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-down"/></svg></button>',
+        appendArrows: $('.slider-arrows'),
+        appendDots: $('.slider-dots')
       });
 
-      window.addEventListener('scroll', scrollHandler);
+      $('.js-slider').slick('slickAdd',"<div class='prostavka'></div>");
 
-      function scrollHandler() {
-        var normalSection = document.querySelectorAll(".section")[indexForNormalScroll];
-        var offset = normalSection.offsetTop;
+      $('.js-slider').bind('mousewheel DOMMouseScroll', slider_scroll);
 
-        if (getScrollTop() < offset && !fullpage_api.getFullpageData().autoScrolling) {
-          $('html').toggleClass('fp-scroll-free');
-          fullpage_api.setAutoScrolling(true);
-        } else if (getScrollTop() > offset && fullpage_api.getFullpageData().autoScrolling) {
-          $('html').toggleClass('fp-scroll-free');
-          fullpage_api.setAutoScrolling(false);
+      $('.js-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        if(nextSlide + 1 == slick.slideCount) {
+          $('body').removeClass('overflow');
+          $('.js-slider').unbind('mousewheel DOMMouseScroll');
+          var sH = $('.slider').height() + 1;
+          var lastSlide = slick.slideCount-1
+          $('body,html').animate({
+            scrollTop: sH
+          }, 600, function () {
+            $('.js-slider').slick('slickGoTo', '0');
+          });
         }
-      }
-
-      function getScrollTop() {
-        var doc = document.documentElement;
-        return (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-      }
+      });
     }
   }
-
-  //переключение слайда в главном баннере
-  $('.js-slide').click(function () {
-    var href = $(this).attr('href');
-    console.log(href);
-    apiFullPage.moveTo(href);
-  });
-
-  //переключение слайда в главном баннере вверх
-  $('.js-slide-up').click(function () {
-    apiFullPage.moveSectionUp();
-  });
-
-  //переключение слайда в главном баннере вниз
-  $('.js-slide-down').click(function () {
-    apiFullPage.moveSectionDown();
-  });
 
   //слайдер "команда"
   if ($('.js-team-slider').length) {
@@ -205,10 +205,8 @@ $(document).ready(function () {
 
   //открваем мобильное меню
   $('.js-menu-open').click(function () {
-    if($('body').width() > 1199) {
-      apiFullPage.setAllowScrolling(false);
-    }
-    $('body').toggleClass('overflow');
+    $('body').addClass('overflow');
+
     $('.menu').fadeIn('300', function () {
       $('.menu__inner').animate({
           left: "0"
@@ -224,10 +222,7 @@ $(document).ready(function () {
         left: "-100%"
       }, 400, function() {
         $('.menu').fadeOut('300', function () {
-          $('body').toggleClass('overflow');
-          if($('body').width() > 1199) {
-            apiFullPage.setAllowScrolling(true);
-          }
+          $('body').removeClass('overflow');
         });
     });
     return false;
@@ -239,14 +234,13 @@ $(document).ready(function () {
 		var id  = $(this).attr('href'),
 		top = $(id).offset().top;
 
+    $('.js-slider').unbind('mousewheel DOMMouseScroll');
+
     $('.menu__inner').animate({
         left: "-100%"
       }, 400, function() {
         $('.menu').fadeOut('300', function () {
-          if($('body').width() > 1199) {
-            apiFullPage.setAllowScrolling(true);
-          }
-          $('body').toggleClass('overflow');
+          $('body').removeClass('overflow');
           $('body,html').animate({
             scrollTop: top
           }, 500, 'linear');
@@ -255,12 +249,12 @@ $(document).ready(function () {
 	});
 
   //скролл наверх по клику на лого
-  $('.logo').click(function () {
+  /*$('.logo').click(function () {
     $('body,html').animate({
       scrollTop: 0
     }, 500, 'linear');
     return false;
-  });
+  });*/
 
   //открываем попап
   $('.js-popup').click(function () {

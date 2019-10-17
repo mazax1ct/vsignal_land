@@ -85,10 +85,10 @@
 
   <header class="header">
     <div class="header__container container">
-      <a class="logo" href="#">
+      <div class="logo">
         <img class="logo__image logo__image--white" src="images/logo--white.svg" alt="VSignal">
         <img class="logo__image logo__image--blue" src="images/logo--blue.svg" alt="VSignal">
-      </a>
+      </div>
       <a class="header__phone-button" href="tel:+78125018207" title="Позвоните нам">
         <svg class="header__phone-button-icon" aria-hidden="true">
           <use xlink:href="#phone" />
@@ -153,8 +153,8 @@
   </div>
 
   <div class="slider-block">
-    <div id="fullpage" class="js-slider slider">
-      <div class="slider__slide section" data-anchor="slide_1">
+    <div class="js-slider slider">
+      <div class="slider__slide">
         <picture>
           <source media="(max-width: 767px)" srcset="images/content/slider/small/img_1.jpg">
           <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
@@ -166,7 +166,7 @@
           <p class="slider__slide-text">Уникальная клиника Адаптационной медицины применяет интегративный подход и сочетает традиционные методы с современными достижениями в нейрофизиологии.</p>
         </div>
       </div>
-      <div class="slider__slide section" data-anchor="slide_2">
+      <div class="slider__slide">
         <picture>
           <source media="(max-width: 767px)" srcset="images/content/slider/small/img_1.jpg">
           <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
@@ -178,7 +178,7 @@
           <p class="slider__slide-text">Кратенькое описание проекта с используемыми нами кейсами. И вообще мы крутые парни</p>
         </div>
       </div>
-      <div class="slider__slide section" data-anchor="slide_3">
+      <div class="slider__slide">
         <picture>
           <source media="(max-width: 767px)" srcset="images/content/slider/small/img_1.jpg">
           <source media="(min-width: 768px)" srcset="images/content/slider/big/img_1.jpg">
@@ -186,30 +186,15 @@
         </picture>
         <div class="slider__slide-container">
           <p class="slider__slide-pretitle">Подзаголовок другого слайда</p>
-          <p class="slider__slide-title">Длинный заголовок о другом нашем проекте. И ещё немного текста</p>
+          <p class="slider__slide-title">Привет</p>
           <p class="slider__slide-text">Кратенькое описание проекта с используемыми нами кейсами. И вообще мы крутые парни</p>
         </div>
       </div>
     </div>
-    <ul id="slider_menu" class="slider-menu">
-      <li class="slider-menu__item active" data-menuanchor="slide_1"><a class="js-slide slider-menu__link" href="slide_1"><span class="slider-menu__link-text">1</span></a></li>
-      <li class="slider-menu__item" data-menuanchor="slide_2"><a class="js-slide slider-menu__link" href="slide_2"><span class="slider-menu__link-text">2</span></a></li>
-      <li class="slider-menu__item" data-menuanchor="slide_3"><a class="js-slide slider-menu__link" href="slide_3"><span class="slider-menu__link-text">3</span></a></li>
-      <li class="slider-menu__item">
-        <a class="js-slide-up slider-menu__link slider-menu__link--arrow" href="javascript:void(0)" title="Назад">
-          <svg class="slider-menu__link-icon" aria-hidden="true">
-            <use xlink:href="#slider-up" />
-          </svg>
-        </a>
-      </li>
-      <li class="slider-menu__item">
-        <a class="js-slide-down slider-menu__link slider-menu__link--arrow" href="javascript:void(0)" title="Вперед">
-          <svg class="slider-menu__link-icon" aria-hidden="true">
-            <use xlink:href="#slider-down" />
-          </svg>
-        </a>
-      </li>
-    </ul>
+    <div class="slider-menu">
+      <div class="slider-dots"></div>
+      <div class="slider-arrows"></div>
+    </div>
   </div>
 
   <div id="services" class="about">
@@ -545,7 +530,6 @@
   </div>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/fullpage.min.js"></script>
   <script type="text/javascript" src="js/slick.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
 </body>
