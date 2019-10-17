@@ -18,74 +18,79 @@ html.fp-scroll-free
   list-style: none
   margin: 0
   padding: 0
-  position: fixed
+  position: absolute
   top: 50%
   transform: translate(-50%, -50%)
+  width: 0
   z-index: 101
 
   @media(min-width: 1200px)
     display: flex
 
-  &__item
-    align-items: center
-    display: flex
-    justify-content: center
-    height: 30px
-    margin-bottom: 0
+  .slider-dots,
+  .slider-arrows
+    transform: translateX(-50%)
     width: 30px
 
-    &.active
-      .slider-menu__link
-        &::after
-          background-color: #fff
-          height: 8px
-          width: 8px
+  .slick-dots
+    position: static
 
-  &__link
-    align-items: center
-    display: flex
-    justify-content: center
-    height: 30px
-    position: relative
-    width: 30px
-
-    &::after
-      background-color: rgba(#fff, 0.34)
-      border-radius: 50%
-      content: ''
+    li
       display: block
-      height: 5px
-      transition: all 0.3s
-      width: 5px
+      height: 30px
+      margin: 0
+      width: 30px
 
-    &--arrow
-      &::after
-        display: none
+      &.slick-active
+        button
+          &::before
+            background-color: #fff
+            height: 8px
+            width: 8px
 
-  &__link-text
-    position: absolute
-    margin: -1px 0 0 -1px
-    padding: 0
-    display: block
-    width: 1px
-    height: 1px
-    font-size: 1px
-    line-height: 1px
-    overflow: hidden
-    clip: rect(0,0,0,0)
-    border: 0
-    outline: 0
+      button
+        height: 30px
+        position: relative
+        width: 30px
 
-  &__link-icon
+        &::before
+          background-color: rgba(#C4C4C4, 0.34)
+          border-radius: 50%
+          height: 5px
+          left: 50%
+          top: 50%
+          transform: translate(-50%, -50%)
+          transition: all 0.3s
+          width: 5px
+
+  .slick-arrow
+    height: 30px
+    position: static
+    transform: none
+    width: 30px
+
+  .slick-arrow__icon
     fill: none
-    height: 15px
-    stroke: #C4C4C4
+    height: 16px
+    stroke: #fff
     width: 30px
 
 .slider
+  background-color: #F9F9F9
+
   @media(min-width: 1200px)
+    height: 100vh
     min-height: 100vh
     z-index: 1
+
+  .slick-list,
+  .slick-track,
+  .slick-slide
+    height: 100%
+
+  .slick-slide
+    &.prostavka
+      height: 0
 
   &__slide
     background-size: cover

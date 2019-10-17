@@ -3,27 +3,22 @@
   height: 70px
   left: 0
   position: absolute
-  top: 70px
-  transform: translateY(-100%)
+  top: 0
+  transform: translateY(0)
   width: 100%
   transition: transform 0.3s, top 0.3s
   z-index: 100
 
   @media(min-width: 1200px)
     height: 80px
-    position: fixed
-    top: 130px
+    position: absolute
+    transform: translateY(50%)
 
   &.fixed
     background-color: #fff
     box-shadow: 0 2px 40px 1px rgba(0,0,0,0.1)
     position: fixed
     transform: translateY(0) !important
-    top: 0
-
-    @media(min-width: 1200px)
-      transform: translateY(0) 
-      top: 0
 
     .logo__image--blue
       display: block
@@ -55,7 +50,6 @@
 
   &.fixed2
     transform: translateY(-100%)
-    top: 0
 
   &__container
     align-items: center

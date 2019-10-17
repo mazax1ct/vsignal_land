@@ -20,8 +20,8 @@
   &:hover,
   &:focus,
   &:active
-    background-color: #1D3461
-    border-color: #1D3461
+    background-color: lighten(#071D5B, 5%)
+    border-color: lighten(#071D5B, 5%)
     color: #fff
 
   &:disabled,
@@ -32,8 +32,8 @@
     &:hover,
     &:focus,
     &:active
-      background-color: #223D72
-      border-color: #223D72
+      background-color: #071D5B
+      border-color: #071D5B
       outline: none
 
   &--white
@@ -44,9 +44,22 @@
     &:hover,
     &:focus,
     &:active
-      background-color: darken(#fff, 10%)
+      background-color: #071D5B
       border-color: #071D5B
-      color: #071D5B
+      color: #fff
+
+    &:disabled,
+    &.disabled
+      cursor: default
+      opacity: 0.5
+
+      &:hover,
+      &:focus,
+      &:active
+        background-color: #fff
+        border-color: #071D5B
+        color: #071D5B
+        outline: none
 
 a.button
   align-items: center
