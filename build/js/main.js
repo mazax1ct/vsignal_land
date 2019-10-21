@@ -51,7 +51,7 @@ $(document).ready(function () {
         $('body').addClass('overflow');
       }
 
-    currentSlideSlick = $('.js-slider').slick({
+      currentSlideSlick = $('.js-slider').slick({
         fade: true,
         auto: false,
         mobileFirst: true,
@@ -222,7 +222,13 @@ $(document).ready(function () {
         left: "-100%"
       }, 400, function() {
         $('.menu').fadeOut('300', function () {
-          $('body').removeClass('overflow');
+          if($('body').width() < 1200) {
+            $('body').removeClass('overflow');
+          } else if ($('body').width() >= 1200 && $(window).scrollTop() == 0) {
+            $('body').addClass('overflow');
+          } else {
+            $('body').removeClass('overflow');
+          }
         });
     });
     return false;
