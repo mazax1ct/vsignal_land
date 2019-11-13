@@ -28,7 +28,16 @@ var slider_scroll = function (event) {
   } else {
     $('.js-slider').slick('slickNext');
   }
-}
+};
+
+//проверка на пустоту поля ввода
+$(document).on("blur", ".js-input", function(){
+    if($(this).val()) {
+        $(this).parent('.input-label').addClass('filled');
+    } else {
+        $(this).parent('.input-label').removeClass('filled');
+    }
+});
 
 $(document).ready(function () {
   //запуск функции навешивания класса с тенью на шапку
@@ -38,6 +47,7 @@ $(document).ready(function () {
   if ($('.js-slider').length) {
     if($('body').width() < 1199) {
       $('.js-slider').slick({
+        lazyLoad: 'ondemand',
         auto: false,
         mobileFirst: true,
         slidesToShow: 1,
@@ -52,6 +62,7 @@ $(document).ready(function () {
       }
 
       currentSlideSlick = $('.js-slider').slick({
+        lazyLoad: 'ondemand',
         fade: true,
         auto: false,
         mobileFirst: true,
@@ -74,7 +85,7 @@ $(document).ready(function () {
           $('body').removeClass('overflow');
           $('.js-slider').unbind('mousewheel DOMMouseScroll');
           var sH = $('.slider').height() + 1;
-          var lastSlide = slick.slideCount-1
+          var lastSlide = slick.slideCount-1;
           $('body,html').animate({
             scrollTop: sH
           }, 600, function () {
@@ -88,7 +99,7 @@ $(document).ready(function () {
   //слайдер "команда"
   if ($('.js-team-slider').length) {
     $('.js-team-slider').slick({
-      focusOnSelect: true,
+      /*focusOnSelect: true,*/
       centerMode: true,
       variableWidth: true,
       auto: false,
@@ -101,7 +112,7 @@ $(document).ready(function () {
         {
           breakpoint: 1200,
           settings: {
-            focusOnSelect: true,
+            focusOnSelect: false,
             edgeFriction: 0,
             centerMode: false,
             variableWidth: false,
@@ -116,7 +127,7 @@ $(document).ready(function () {
         {
           breakpoint: 767,
           settings: {
-            focusOnSelect: true,
+            focusOnSelect: false,
             edgeFriction: 0,
             centerMode: false,
             variableWidth: false,
@@ -145,6 +156,7 @@ $(document).ready(function () {
   if ($('.js-case-slider').length) {
     $('.js-case-slider').each(function (index) {
       $('.js-case-slider').eq(index).slick({
+        lazyLoad: 'ondemand',
         auto: false,
         mobileFirst: true,
         slidesToShow: 1,
@@ -155,6 +167,7 @@ $(document).ready(function () {
           {
             breakpoint: 767,
             settings: {
+              lazyLoad: 'ondemand',
               arrows: true,
               prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
               nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
@@ -165,41 +178,12 @@ $(document).ready(function () {
         ]
       });
     });
-    /*$('.js-case-slider').slick({
-      auto: false,
-      mobileFirst: true,
-      slidesToShow: 1,
-      infinite: true,
-      arrows: false,
-      dots: true,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            arrows: true,
-            prevArrow: '<button type="button" class="slick-prev slick-arrow" title="Назад"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-left"/></svg></button>',
-            nextArrow: '<button type="button" class="slick-next slick-arrow" title="Вперед"><svg class="slick-arrow__icon" aria-hidden="true"><use xlink:href="#slider-right"/></svg></button>',
-            appendArrows: $(this).next('.case-slider-nav').find('.case-slider-arrows'),
-            appendDots: $(this).next('.case-slider-nav').find('.case-slider-dots')
-          }
-        }
-      ]
-    });*/
   }
 
   //проверка на пустоту поля ввода при загрузке страницы
   $('.js-input').each(function() {
     if($(this).val()) {
       $(this).parent('.input-label').addClass('filled');
-    }
-  });
-
-  //проверка на пустоту поля ввода
-  $('.js-input').blur(function () {
-    if($(this).val()) {
-      $(this).parent('.input-label').addClass('filled');
-    } else {
-      $(this).parent('.input-label').removeClass('filled');
     }
   });
 
@@ -252,21 +236,6 @@ $(document).ready(function () {
           }, 500, 'linear');
         });
     });
-	});
-
-  //скролл наверх по клику на лого
-  /*$('.logo').click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 500, 'linear');
-    return false;
-  });*/
-
-  //открываем попап
-  $('.js-popup').click(function () {
-    $('body').addClass('overflow');
-    $('.popup-shade').fadeIn();
-    return false;
   });
 
   //закрываем попап
