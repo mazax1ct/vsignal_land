@@ -8,11 +8,24 @@
     padding-bottom: 30px
 
   @media(min-width: 1200px)
-    background-image: url('../images/bg/cases.svg')
-    background-repeat: no-repeat
-    background-position: 50% 140px
-    padding-top: 135px
+    padding-top: 60px
     padding-bottom: 60px
+
+  &--decorated
+    @media(min-width: 1200px)
+      background-image: url('../images/bg/cases.svg')
+      background-repeat: no-repeat
+      background-position: 50% 140px
+      padding-top: 135px
+      padding-bottom: 60px
+
+    .cases__links
+      @media(min-width: 768px)
+        border-top: 1px solid rgba(#395195, 0.23)
+        padding-top: 30px
+
+      @media(min-width: 1200px)
+        padding-top: 60px
 
   &__container
     max-width: 1330px
@@ -38,12 +51,7 @@
   &__links
     @media(min-width: 768px)
       display: flex
-      border-top: 1px solid rgba(#395195, 0.23)
-      padding-top: 30px
       position: relative
-
-    @media(min-width: 1200px)
-      padding-top: 60px
 
     &::after
       @media(min-width: 768px)

@@ -1,0 +1,125 @@
+.cases2
+  background-color: #F9F9F9
+  padding-top: 60px
+  padding-bottom: 60px
+
+  @media(min-width: 1200px)
+    padding-top: 100px
+    padding-bottom: 100px
+
+  &__title
+    color: #071D5B
+    font-size: 32px
+    line-height: 38px
+    margin-bottom: 25px
+    max-width: 1070px
+    margin-left: auto
+    margin-right: auto
+
+    @media(min-width: 1200px)
+      font-size: 50px
+      line-height: 51px
+      margin-bottom: 12px
+
+  &__list
+    margin-bottom: -40px
+    max-width: 1318px
+
+    @media(min-width: 768px)
+      display: flex
+      flex-wrap: wrap
+      margin-left: -15px
+      margin-right: -15px
+
+    @media(min-width: 1340px)
+      margin-left: auto
+      margin-right: auto
+
+  &__list-item
+    margin-bottom: 40px
+
+    &:nth-child(odd)
+      @media(min-width: 768px)
+        padding-top: 60px
+
+    @media(min-width: 768px)
+      padding-left: 15px
+      padding-right: 15px
+      width: 50%
+
+.case2
+  &__image
+    margin-bottom: 15px
+
+    @media(min-width: 1200px)
+      margin-bottom: 23px
+
+  &__info
+    padding-left: 25px
+    padding-right: 25px
+
+    @media(min-width: 1200px)
+      padding-left: 75px
+      padding-right: 75px
+
+  &__link-block
+    margin-bottom: 0
+    text-align: right
+
+    @media(min-width: 1200px)
+      margin-bottom: 23px
+
+  &__link
+    display: inline-block
+    font-size: 13px
+    font-weight: 500
+    line-height: 18px
+    position: relative
+    padding-left: 34px
+    vertical-align: top
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+    &::before
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.3139 1.65965C16.527 -0.55213 20.1276 -0.553004 22.3403 1.65965C23.4086 2.728 23.9971 4.15304 23.9971 5.67326C23.9971 7.19304 23.4086 8.61852 22.3403 9.68643L17.092 14.9347C15.9856 16.0411 14.5322 16.5942 13.0788 16.5942C11.6254 16.5942 10.172 16.0411 9.06562 14.9347C8.72464 14.5942 8.72464 14.041 9.06562 13.7C9.4066 13.3591 9.95933 13.3591 10.3003 13.7C11.8328 15.2316 14.3253 15.2316 15.8577 13.7L21.1051 8.45131C21.8434 7.71303 22.2503 6.72633 22.2503 5.67326C22.2503 4.61976 21.8434 3.63306 21.1051 2.89478C20.3669 2.1565 19.3802 1.74959 18.3267 1.74959C17.2736 1.74959 16.2869 2.1565 15.5486 2.89434L11.5354 6.90751C11.1945 7.24849 10.6417 7.24849 10.3007 6.90751C9.95977 6.56653 9.95977 6.0138 10.3007 5.67282L14.3139 1.65965ZM8.44853 21.1086L11.8444 17.7128C12.1853 17.3718 12.7376 17.3718 13.0786 17.7128C13.4196 18.0537 13.4196 18.6065 13.0786 18.9475L9.68278 22.3433C8.61487 23.4116 7.18939 24.0002 5.66961 24.0002C4.15026 24.0002 2.72478 23.4116 1.65687 22.3433C0.588529 21.2754 0 19.8499 0 18.3305C0 16.8108 0.588528 15.3853 1.65644 14.3174L6.59606 9.37732C8.80959 7.16466 12.4102 7.1651 14.6224 9.37732C14.9634 9.7183 14.9634 10.271 14.6224 10.612C14.2814 10.953 13.7287 10.953 13.3877 10.612C12.6494 9.87416 11.6627 9.46726 10.6097 9.46726C9.55617 9.46726 8.56946 9.87416 7.83118 10.612L2.89156 15.5516C1.35955 17.0836 1.35955 19.5766 2.89156 21.1086C3.62984 21.8469 4.61698 22.2538 5.67004 22.2538C6.72354 22.2538 7.71025 21.8469 8.44853 21.1086Z' fill='%23071D5B'/%3E%3C/svg%3E%0A")
+      background-position: 0 0
+      background-repeat: no-repeat
+      content: ''
+      height: 24px
+      left: 0
+      position: absolute
+      top: -4px
+      width: 24px
+      z-index: 1
+
+  &__title
+    font-size: 24px
+    line-height: 30px
+    margin-bottom: 17px
+    position: relative
+
+    @media(min-width: 1200px)
+      font-size: 34px
+      line-height: 47px
+      margin-bottom: 22px
+
+    &::after
+      background-color: rgba(#071D5B, 0.2)
+      bottom: -1px
+      content: ''
+      height: 1px
+      left: 0
+      position: absolute
+      top: auto
+      width: 87px
+      z-index: 1
+
+      @media(min-width: 1200px)
+        width: 119px
+
+  &__description
+    @media(min-width: 1200px)
+      font-size: 20px
+      line-height: 28px

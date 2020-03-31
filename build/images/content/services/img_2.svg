@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122 132" width="122" height="132">
+<style type="text/css">
+	.st0{opacity:0.1;fill:#161718;enable-background:new;}
+	.st1{fill:none;stroke:#0D0F0F;}
+	.st2{fill:none;stroke:#0D0F0F;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g>
+	<path class="st0" d="M9.3,128.5V24.8c0-3.1,2.5-5.6,5.6-5.6H90c1.3,0,2.6,0.2,3.8,0.7c-1.5-5.5-6.4-9.4-12.1-9.4h-68C6.7,10.5,1,16.2,1,23.1v96.7c0,5.4,3.5,10.3,8.7,12C9.4,130.7,9.3,129.6,9.3,128.5z"/>
+	<path class="st1" d="M94.3,96.1v23.2c0,7-5.7,12.6-12.6,12.6h-68c-7,0-12.6-5.7-12.6-12.6V22.8c0-7,5.7-12.6,12.6-12.6h68c7,0,12.6,5.7,12.6,12.6v32.3"/>
+	<path class="st2" d="M94.9,82.2l23.5-23.5c3.7-4,3.4-10.2-0.6-13.9c-3.8-3.5-9.6-3.5-13.3,0L67,82.2l8.7,8.7l5.1,5.1"/>
+	<path class="st2" d="M81,96.1l-25,10.9l11.1-24.9"/>
+	<path class="st2" d="M24,33.6h43.3"/>
+	<path class="st2" d="M24,47.6h34.6"/>
+	<path class="st2" d="M24,61.5h23.7"/>
+</g>
+</svg>
