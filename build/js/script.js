@@ -34,10 +34,14 @@ $(document).ready(function () {
         left: "-100%"
       }, 400, function() {
         $('.menu').fadeOut('300', function () {
-          if($('body').width() < 1200) {
-            $('body').removeClass('overflow');
-          } else if ($('body').width() >= 1200 && $(window).scrollTop() == 0) {
-            $('body').addClass('overflow');
+          if (!$('body').hasClass('inner-page')) {
+            if($('body').width() < 1200) {
+              $('body').removeClass('overflow');
+            } else if ($('body').width() >= 1200 && $(window).scrollTop() == 0) {
+              $('body').addClass('overflow');
+            } else {
+              $('body').removeClass('overflow');
+            }
           } else {
             $('body').removeClass('overflow');
           }
