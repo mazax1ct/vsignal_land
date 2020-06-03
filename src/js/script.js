@@ -94,4 +94,24 @@ $(document).ready(function () {
     });
     return false;
   });
+
+  if ($('.js-cases-slider2').length) {
+    $('.js-cases-slider2').slick({
+      auto: false,
+      mobileFirst: true,
+      slidesToShow: 1,
+      infinite: true,
+      arrows: false,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }
+      ]
+    });
+  }
 });

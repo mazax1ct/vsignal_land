@@ -7,6 +7,9 @@
     padding-top: 100px
     padding-bottom: 100px
 
+  &__container
+    max-width: 1318px
+
   &__title
     color: #071D5B
     font-size: 32px
@@ -19,7 +22,6 @@
     @media(min-width: 1200px)
       font-size: 50px
       line-height: 51px
-      margin-bottom: 12px
 
   &__list
     margin-bottom: -40px
@@ -38,14 +40,39 @@
   &__list-item
     margin-bottom: 40px
 
-    &:nth-child(odd)
-      @media(min-width: 768px)
-        padding-top: 60px
-
     @media(min-width: 768px)
       padding-left: 15px
       padding-right: 15px
       width: 50%
+
+  &__slider
+    .slick-dots
+      li
+        height: 30px
+        margin: 0
+        width: 30px
+
+        &.slick-active
+          button
+            &::before
+              background-color: #071D5B
+              height: 8px
+              width: 8px
+
+        button
+          height: 30px
+          position: relative
+          width: 30px
+
+          &::before
+            background-color: rgba(#C4C4C4, 0.34)
+            border-radius: 50%
+            height: 5px
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+            transition: all 0.3s
+            width: 5px
 
 .case2
   &__image
