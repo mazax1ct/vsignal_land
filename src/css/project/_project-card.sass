@@ -1,0 +1,42 @@
+.project-card
+  display: block
+  max-width: 416px
+  margin-left: auto
+  margin-right: auto
+  position: relative
+
+  &::after
+    background-color: rgba(0,0,0,0.5)
+    content: ''
+    height: 100%
+    left: 0
+    position: absolute
+    top: 0
+    width: 100%
+    z-index: 1
+
+  &__content
+    bottom: 0
+    color: #fff
+    left: auto
+    position: absolute
+    padding: 20px 30px
+    top: auto
+    width: 100%
+    z-index: 2
+
+    @media(min-width: 768px) and (max-width: 991px)
+      padding: 15px
+
+  &__title
+    font-size: 20px
+    font-weight: 700
+    margin-bottom: 20px
+
+    @media(min-width: 768px) and (max-width: 991px)
+      font-size: 15px
+      margin-bottom: 10px
+
+  &__type
+    @media(min-width: 768px) and (max-width: 991px)
+      font-size: 12px
