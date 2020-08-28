@@ -1,0 +1,67 @@
+.trust
+  border-bottom: 1px solid #ededee
+  padding-top: 50px
+  padding-bottom: 50px
+
+  @media(min-width: 1350px)
+    padding-top: 90px
+    padding-bottom: 90px
+
+  &__container
+    max-width: 1330px
+
+    @media(min-width: 992px)
+      align-items: center
+      display: flex
+      flex-wrap: wrap
+
+  &__text
+    max-width: 560px
+
+    @media(min-width: 992px)
+      max-width: 460px
+
+    @media(min-width: 1200px)
+      font-size: 18px
+      line-height: 1.75
+
+    h2
+      font-size: 32px
+      line-height: 38px
+      margin-bottom: 25px
+
+      @media(min-width: 992px)
+        font-size: 40px
+        line-height: 44px
+
+      @media(min-width: 1200px)
+        font-size: 51px
+        line-height: 50px
+        margin-bottom: 50px
+
+    p
+      &:not(:last-child)
+        margin-bottom: 25px
+
+        @media(min-width: 1200px)
+          margin-bottom: 40px
+
+  &__logos
+    display: flex
+    flex-wrap: wrap
+    flex-grow: 1
+
+  &__logo
+    background-position: 50% 50%
+    background-repeat: no-repeat
+    background-size: 60%
+    height: 100px
+    opacity: 0.3
+    width: 50%
+
+    @media(min-width: 600px)
+      width: 33.33333%
+
+    @media(min-width: 1260px)
+      background-size: 40%
+      height: 140px
