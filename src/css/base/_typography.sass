@@ -49,3 +49,25 @@ img
   height: auto
   max-width: 100%
   vertical-align: top
+
+.numbered-list
+  counter-reset:  item
+  list-style: none
+  padding-left: 0
+
+  li
+    position: relative
+    padding-left: 40px
+
+    &:not(:last-child)
+      margin-bottom: 20px
+
+    &::before
+      color: #071d5b
+      content: counter(item) '.'
+      counter-increment: item
+      font-size: 30px
+      font-weight: 500
+      left: 0
+      position: absolute
+      top: 0.25em
