@@ -115,12 +115,18 @@
         @media(min-width: 1200px)
           height: 430px
 
+      .team-person__image--front
+        opacity: 0
+
+      .team-person__image--back
+        opacity: 1
+
       .team-person__info
         opacity: 1
 
 .team-person
   cursor: pointer
-  
+
   &__image-block
     height: 313px
 
@@ -129,8 +135,24 @@
 
   &__image-block-inner
     height: 267px
+    position: relative
     overflow: hidden
     transition: height 0.3s
+
+  &__image
+    &--front,
+    &--back
+      transition: opacity 0.3s
+
+    &--front
+      opacity: 1
+
+    &--back
+      left: 0
+      opacity: 0
+      position: absolute
+      top: 0
+      z-index: 1
 
   &__info
     opacity: 0
